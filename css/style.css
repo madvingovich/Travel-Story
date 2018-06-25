@@ -36,9 +36,6 @@ a.story_link {
     letter-spacing: 3px;
     box-shadow: 0 5px 35px #c1c1c1;
     transition: .5s;
-    opacity: 0;
-    position: relative;
-    top: 100px;
 }
 .night a.story_link {
     background: #445295;
@@ -428,6 +425,7 @@ input.volume::-webkit-slider-thumb {
     background-size: cover;
     margin-top: -5em;
     background: url("../img/day_bg.png") no-repeat;
+    overflow: hidden;
 }
 .night .quote {
     background: url("../img/night_bg.png") no-repeat;
@@ -511,6 +509,7 @@ input.volume::-webkit-slider-thumb {
 
 footer {
     padding: 150px 0;
+    overflow: hidden;
 }
 footer {
     background: url("../img/footer_bg.jpg") no-repeat;

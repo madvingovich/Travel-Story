@@ -60,13 +60,13 @@ $(window).on({
             };
             this.showToRight = function (elem) {
                 if($(document).scrollTop() + $(window).height() > $(elem).offset().top + this.screenPercent) {
-                    $(elem).animate({left: 0, opacity: 1}, 700);
+                    $(elem).animate({left: 0, opacity: 1}, 800);
                 };
             };
 
             this.showToLeft = function (elem) {
                 if($(document).scrollTop() + $(window).height() > $(elem).offset().top ) {
-                    $(elem).animate({right: 0, opacity: 1}, 700);
+                    $(elem).animate({right: 0, opacity: 1}, 800);
                 };
             };
 
@@ -96,7 +96,7 @@ $(window).on({
 
         showItems.removeOnloadWindow();
 
-        showItems.applyShowAnimations();
+        // showItems.applyShowAnimations();
 
         $(document).on({
             click:function (e) {
