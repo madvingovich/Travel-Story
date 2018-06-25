@@ -2,7 +2,6 @@ $(window).on({
     load:function () {
 
         function showItems(e) {
-
             this.check = 1;
             this.nightModeToggle = function (e) {
                 if (e.target.closest(".night_mode")) {
@@ -87,9 +86,23 @@ $(window).on({
                 this.showToLeft($(".quote_info"));
                 this.showToLeft($(".quote_content"));
                 this.showToTop($(".subscribe_block"));
+            };
+
+            this.galleryItems = function (e) {
+                var src = $(e.target).attr("src");
+                console.log(($(e.target).attr("src") === $(".gallery_head_img img").attr("src")))
+                if(!(($(e.target).attr("src") === $(".gallery_head_img img").attr("src")))) {
+                    $(".gallery_item.active_item").removeClass("active_item");
+                    $(e.target).closest(".gallery_item").addClass("active_item");
+                    $(".gallery_head_img img").animate({opacity:0},100,function () {
+                        setTimeout(function () {
+                            $(".gallery_head_img img").attr("src", src);
+                            $(".gallery_head_img img").animate({opacity:1},100)
+                        },100)
+                    });
+                }
             }
         };
-
 
 
         var showItems = new showItems();
@@ -101,6 +114,7 @@ $(window).on({
         $(document).on({
             click:function (e) {
                 showItems.nightModeToggle(e);
+                showItems.galleryItems(e)
             },
             scroll:function () {
                 showItems.applyShowAnimations();
