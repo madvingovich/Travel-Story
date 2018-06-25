@@ -64,7 +64,7 @@ $(window).on({
             };
 
             this.showToLeft = function (elem) {
-                if($(document).scrollTop() + $(window).height() > $(elem).offset().top ) {
+                if($(document).scrollTop() + $(window).height() > $(elem).offset().top + this.screenPercent) {
                     $(elem).animate({right: 0, opacity: 1}, 800);
                 };
             };
@@ -82,6 +82,7 @@ $(window).on({
                 this.scaleShow($(".main_second_story .story_img"));
                 this.showToRight($(".paragraph3"));
                 this.showToLeft($(".paragraph4"));
+                this.scaleShow($(".gallery_block"));
                 this.showToRight($(".quote_img"));
                 this.showToLeft($(".quote_info"));
                 this.showToLeft($(".quote_content"));
@@ -89,17 +90,20 @@ $(window).on({
             };
 
             this.galleryItems = function (e) {
-                var src = $(e.target).attr("src");
-                console.log(($(e.target).attr("src") === $(".gallery_head_img img").attr("src")))
-                if(!(($(e.target).attr("src") === $(".gallery_head_img img").attr("src")))) {
-                    $(".gallery_item.active_item").removeClass("active_item");
-                    $(e.target).closest(".gallery_item").addClass("active_item");
-                    $(".gallery_head_img img").animate({opacity:0},100,function () {
-                        setTimeout(function () {
-                            $(".gallery_head_img img").attr("src", src);
-                            $(".gallery_head_img img").animate({opacity:1},100)
-                        },100)
-                    });
+                if(e.target.closest(".gallery_item")) {
+                    var src = $(e.target).attr("src");
+
+                    if(!($(e.target).attr("src") === $(".gallery_head_img img").attr("src"))) {
+
+                        $(".gallery_item.active_item").removeClass("active_item");
+                        $(e.target).closest(".gallery_item").addClass("active_item")
+                        $(".gallery_head_img img").animate({opacity:0},100,function () {
+                            setTimeout(function () {
+                                $(".gallery_head_img img").attr("src", src);
+                                $(".gallery_head_img img").animate({opacity:1},100)
+                            },100)
+                        });
+                    }
                 }
             }
         };
