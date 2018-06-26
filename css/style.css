@@ -281,7 +281,6 @@ header {
 }
 .paragraph4 {
     right: -700px;
-
 }
 
    /* SLIDER */
@@ -291,7 +290,7 @@ header {
     position: relative;
     display: flex;
     overflow: hidden;
-    transition: 1.5s linear;
+    transition: 1.2s linear;
     transform: scale(0);
 }
 .slides {
@@ -654,6 +653,9 @@ footer {
     }
     .paragraph1 {
         margin-bottom: 2em;
+    }
+    .prev, .next {
+        font-size: 2em;
     }
     .main_second_story {
         padding: 0 15%;
