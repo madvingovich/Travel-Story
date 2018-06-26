@@ -1,84 +1,109 @@
-$(window).on({
-    load:function () {
-        function mySlider(e) {
+$(document).ready(function () {
 
-            this.mostLittle = function (e) {
-                var images = $(e.find("img"));
-                var height = $(images[0]).height();
+    function mySlider(e) {
 
-                for(var i = 0; i < images.length - 1; i++) {
-                    if($(images[i + 1]).height() < height) {
-                        height = $(images[i + 1]).height();
-                    }
-                };
-                $(".slider_block img").css({"max-height":height+"px"})
-            };
+        this.currentSlide = 0;
+        this.slideLength = $(".slide").length;
+        this.timer = 0;
 
-            this.applySizes = function () {
-                $(".slider_block:last-child").prependTo(".slides");
-                $("#slider").width($(e.parent()).width());
-                $(".slides").css({"margin-left": -$(e.parent()).width()});
-                $(".slider_block").width($(e.parent()).width());
-            };
+        this.mostLittle = function (e) {
+            var images = $(e.find("img"));
+            var height = $(images[0]).height();
+            for(var i = 0; i < images.length - 1; i++) {
+                if($(images[i + 1]).height() < height) {
+                    height = $(images[i + 1]).height();
+                }
+            }
+            $(".slide img").css({"max-height":height+"px"})
+        };
 
-            this.step = function () {
-                return $(".slider_block").width();
-            };
+        this.sliderWidth = function () {
+            $("#slider").width($(e).parent().width());
+            $(".slide").width($(e).parent().width());
+            $(".slide").height($(".slide img").height());
 
-            this.nextSlide = function (e) {
-                if(e.target.closest(".next")) {
-                    clearTimeout(this.timer);
-                    $(".slides").animate({
-                        left:- this.step()
-                    }, 800, function () {
-                        $(".slider_block:first-child").appendTo(".slides");
-                        $(".slides").css({"left":"0"});
-                    });
-                };
-            };
+        };
 
-            this.prevSlide = function (e) {
-                if(e.target.closest(".prev")) {
-                    clearTimeout(this.timer);
-                    $(".slides").animate({
-                        left:this.step()
-                    }, 800, function () {
-                        $(".slider_block:last-child").prependTo(".slides");
-                        $(".slides").css({"left":"0"});
-                    });
-                };
-            };
-
-            this.timer = false;
-
-            this.pushSlider = function () {
-                $(".slides").animate({
-                    left:- mySlider.step()
-                }, 800, function () {
-                    $(".slider_block:first-child").appendTo(".slides");
-                    $(".slides").css({"left":"0"});
-                });
-                this.sliderAutoPlay();
-            };
-
-            this.sliderAutoPlay = function () {
-                this.timer = setTimeout(function () {
-                    mySlider.pushSlider();
-                },4000);
+        this.addDots = function (e) {
+            var dots = $(e).find(".dots");
+            for(var i = 0; i < this.slideLength; i++) {
+                dots.append("<div class='dot'></div>");
             }
         };
 
-        var mySlider = new mySlider($("#slider"));
+        this.activeSlide = function (e) {
+            $(e).find(".dot").eq(this.currentSlide).addClass("active_dot");
+        };
 
-        mySlider.applySizes();
-        mySlider.mostLittle($("#slider"));
-        mySlider.sliderAutoPlay();
+        this.next = function () {
+            mySlider.currentSlide++;
+            if(mySlider.currentSlide > mySlider.slideLength - 1 ){
+                mySlider.currentSlide = 0;
+            };
+            var slideWidth = $(".slide").width();
+            $(".dot.active_dot").removeClass("active_dot");
+            $(".dot").eq(mySlider.currentSlide).addClass("active_dot");
+            $(".slider-items").css({"left":- slideWidth * mySlider.currentSlide});
+        };
+
+        this.nextSlide = function (e) {
+            if(e.target.closest(".next")) {
+                clearInterval(this.timer);
+                this.next();
+            };
+        };
+
+        this.prevSlide = function (e) {
+            if(e.target.closest(".prev")) {
+                clearInterval(this.timer);
+                this.currentSlide--;
+                if(this.currentSlide < 0 ) {
+                    this.currentSlide = this.slideLength - 1;
+                };
+                var slideWidth = $(".slide").width();
+                $(".dot.active_dot").removeClass("active_dot");
+                $(".dot").eq(this.currentSlide).addClass("active_dot");
+                $(".slider-items").css({"left":- slideWidth * this.currentSlide});
+            };
+        };
+
+        this.dotClick = function (e) {
+            if(e.target.closest(".dot")) {
+                console.log("bbb");
+                var index = $(e.target).index();
+                var slideWidth = $(".slide").width();
+                $(".slider-items").css({"left":-slideWidth * index});
+                $(".dot.active_dot").removeClass("active_dot");
+                $(e.target).closest(".dot").addClass("active_dot");
+                this.currentSlide = index;
+            };
+        };
+
+        this.sliderAutoplay = function () {
+            this.timer = setInterval(function () {
+                mySlider.next();
+            },3000);
+        };
+
+    };
+
+    var mySlider = new mySlider($("#slider"));
+
+    mySlider.sliderWidth();
+    mySlider.addDots($("#slider"));
+    mySlider.activeSlide($("#slider"));
+    mySlider.mostLittle($("#slider"));
+    mySlider.sliderWidth();
+    mySlider.sliderAutoplay();
 
         $(document).on({
             click: function (e) {
+                mySlider.dotClick(e);
                 mySlider.nextSlide(e);
                 mySlider.prevSlide(e);
             }
         });
-    }
+        $(window).resize(function () {
+            mySlider.sliderWidth();
+        });
 });
