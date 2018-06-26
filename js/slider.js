@@ -80,11 +80,5 @@ $(window).on({
                 mySlider.prevSlide(e);
             }
         });
-        $(window).on({
-            resize:function () {
-                mySlider.applySizes();
-            }
-        })
-
     }
 });
