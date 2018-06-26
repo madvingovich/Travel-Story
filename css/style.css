@@ -290,8 +290,8 @@ header {
     position: relative;
     display: flex;
     overflow: hidden;
-    transition: 1.2s linear;
-    transform: scale(0);
+    transition: .8s linear;
+    transform: scaleY(0);
 }
 .slides {
     display: flex;
