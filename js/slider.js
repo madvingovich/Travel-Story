@@ -7,12 +7,10 @@ $(window).on({
                 var height = $(images[0]).height();
 
                 for(var i = 0; i < images.length - 1; i++) {
-                    console.log($(images[i]).height());
                     if($(images[i + 1]).height() < height) {
                         height = $(images[i + 1]).height();
                     }
                 };
-                console.log(height);
                 $(".slider_block img").css({"max-height":height+"px"})
             };
 
