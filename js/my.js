@@ -69,20 +69,19 @@ $(window).on({
                 };
             };
 
-            this.showButtons = function (elem) {
+            this.showSlider = function (elem) {
                 for(var i = 0; i < $(elem).length; i++) {
-                    if($(document).scrollTop() + $(window).height() > $(elem[i]).offset().top ) {
-                        $(elem[i]).css({"opacity":"1","top":"0"});
+                    if($(document).scrollTop() + $(window).height() > $(elem[i]).offset().top + 200) {
+                        $(elem[i]).css({"opacity":"1"});
                     };
                 };
             };
             this.applyShowAnimations = function () {
-                this.showButtons($(".story_link"));
                 this.showToTop($(".main_second_story_caption"));
                 this.scaleShow($(".main_second_story .story_img"));
                 this.showToRight($(".paragraph3"));
                 this.showToLeft($(".paragraph4"));
-                this.scaleShow($("#slider"));
+                this.showSlider($("#slider"));
                 this.scaleShow($(".gallery_block"));
                 this.showToRight($(".quote_img"));
                 this.showToLeft($(".quote_info"));
