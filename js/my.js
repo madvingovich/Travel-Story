@@ -97,15 +97,17 @@ $(window).on({
 
                         $(".gallery_item.active_item").removeClass("active_item");
                         $(e.target).closest(".gallery_item").addClass("active_item")
-                        $(".gallery_head_img img").animate({opacity:0},100,function () {
+                        $(".gallery_head_img img").animate({
+                            opacity:0
+                        },100,function () {
                             setTimeout(function () {
                                 $(".gallery_head_img img").attr("src", src);
                                 $(".gallery_head_img img").animate({opacity:1},100)
                             },100)
                         });
-                    }
-                }
-            }
+                    };
+                };
+            };
         };
 
 
