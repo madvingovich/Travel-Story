@@ -1,13 +1,11 @@
 $(document).ready(function () {
-    // console.log()
-    //
-
 
     function mySlider(e) {
 
         this.mostLittle = function (e) {
             var images = $(e.find("img"));
             var height = $(images[0]).height();
+            console.log(height + "mm1");
             for(var i = 0; i < images.length - 1; i++) {
                 if($(images[i + 1]).height() < height) {
                     height = $(images[i + 1]).height();
