@@ -81,7 +81,7 @@ $(window).on({
                 this.scaleShow($(".main_second_story .story_img"));
                 this.showToRight($(".paragraph3"));
                 this.showToLeft($(".paragraph4"));
-                this.showSlider($("#slider"));
+                // this.showSlider($("#slider"));
                 this.scaleShow($(".gallery_block"));
                 this.showToRight($(".quote_img"));
                 this.showToLeft($(".quote_info"));
