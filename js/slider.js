@@ -13,6 +13,7 @@ $(document).ready(function () {
                     height = $(images[i + 1]).height();
                 }
             };
+            console.log(height);
             $(".slider_block img").css({"max-height":height+"px"})
         };
 
@@ -66,7 +67,7 @@ $(document).ready(function () {
         this.sliderAutoPlay = function () {
             this.timer = setTimeout(function () {
                 mySlider.pushSlider();
-            },3000);
+            },4000);
         }
     };
 
