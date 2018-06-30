@@ -388,11 +388,11 @@ $(document).ready(function () {
         videoPlayer.vulumeUnhover();
     });
 
-    videoPlayer.videoStartBtn.hover(function () {
+    $(".video_start").hover(function () {
         videoPlayer.videoStartBtnHover();
     },function () {
         videoPlayer.videoStartBtnUnhover();
-    });
+    })
 
 
 });
