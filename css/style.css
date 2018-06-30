@@ -292,8 +292,7 @@ header {
     box-shadow: 0 0 50px #757575;
     -webkit-user-select: none;
     position: relative;
-    transition: 1s;
-    transform: scale(0);
+    opacity: 0;
 }
 .gallery_block img {
     display: block;
@@ -392,9 +391,7 @@ header {
     top: -50px;
     background: #ffffff;
     box-shadow: 0 0 50px #c9c9c9;
-    position: relative;
     opacity: 0;
-    right: -700px;
 }
 .qoute_content .travel_caption {
     color: #52646b;

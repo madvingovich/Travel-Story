@@ -19,7 +19,9 @@ $(window).on({
             };
 
             this.animateTopItems = function () {
-                $(".onload_window").remove();
+                setTimeout(function () {
+                    $(".onload_window").remove();
+                },200);
                 $(".logo").animate({top: 0}, 500);
                 $(".story").animate({opacity:1, bottom:0},1000);
                 $(".night_mode_block").animate({opacity:1},500);
@@ -67,11 +69,11 @@ $(window).on({
                 this.showToRight($(".paragraph3"));
                 this.showToLeft($(".paragraph4"));
                 this.opacityShow($("#slider"));
-                this.scaleShow($(".gallery_block"));
+                this.opacityShow($(".gallery_block"));
                 this.opacityShow($("#video"));
                 this.showToRight($(".quote_img"));
                 this.showToLeft($(".quote_info"));
-                this.showToLeft($(".quote_content"));
+                this.opacityShow($(".quote_content"));
                 this.showToTop($(".subscribe_block"));
             };
 
@@ -105,7 +107,6 @@ $(window).on({
 
         $(document).on({
             click:function (e) {
-                showItems.nightModeToggle(e);
                 showItems.galleryItems(e)
             },
             scroll:function () {
@@ -115,7 +116,7 @@ $(window).on({
 
         setTimeout(function () {
             showItems.animateTopItems();
-        },800);
+        },600);
     }
 });
 
