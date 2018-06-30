@@ -77,7 +77,16 @@
         <a href="#" class="story_link">full story <img class="story_link_img" src="img/link_arrow.png" alt=""></i></a>
     </div>
 </main>
-
+<div id="video">
+    <img src="img/video_poster.jpg" alt="">
+    <div class="video_start">
+        <div class="video_start_icon">
+            <i class="fa fa-play-circle-o"></i>
+        </div>
+        <p>ENJOY</p>
+        <p>IT</p>
+    </div>
+</div>
 <section class="quote">
     <div class="quote_main">
         <div class="quote_header">
@@ -114,8 +123,62 @@
     <div class="circle" id="circle5"></div>
     <div class="circle" id="circle6"></div>
 </div>
+<div class="video_modal">
+    <div class="video_container">
+        <div class="hide_all"></div>
+        <div class="close_modal">
+            <span class="modal_x" id="modal_x1"></span>
+            <span class="modal_x" id="modal_x2"></span>
+        </div>
+        <video >
+            <source src="dimasta.MOV">
+        </video>
+        <div class="video_controls">
+            <div class="play-pause">
+                <div class="pp_block" id="pp_block1"><i class="fa fa-play"></i></div>
+                <div class="pp_block" id="pp_block2"><i class="fa fa-pause"></i></div>
+            </div>
+            <div class="time">
+                <div class="current_time"></div>
+                <div class="timelines">
+                    <div class="mouse_time"></div>
+                    <div class="top_timeline"></div>
+                    <div class="bottom_timeline"></div>
+                </div>
+                <div class="remaining_time"></div>
+            </div>
+            <div class="volume">
+                <div class="vol-btn"><i class="fa fa-volume-up" aria-hidden="true"></i></div>
+                <div class="vol_cont">
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                    <span class="vol"></span>
+                </div>
+            </div>
+            <div class="full_screen"><i class="fa fa-expand" aria-hidden="true"></i></div>
+        </div>
+    </div>
+</div>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/my.js"></script>
 <script src="js/slider.js"></script>
+<script src="js/video.js"></script>
 </body>
 </html>

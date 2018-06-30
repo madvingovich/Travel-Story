@@ -43,7 +43,7 @@ $(window).on({
                 var slideWidth = $(".slide").width();
                 $(".dot.active_dot").removeClass("active_dot");
                 $(".dot").eq(mySlider.currentSlide).addClass("active_dot");
-                $(".slider-items").css({"left":- slideWidth * mySlider.currentSlide});
+                $(".slider-items").css({"transform":"translateX("+- slideWidth * mySlider.currentSlide+ "px" +")"});
             };
 
             this.nextSlide = function (e) {
@@ -63,7 +63,7 @@ $(window).on({
                     var slideWidth = $(".slide").width();
                     $(".dot.active_dot").removeClass("active_dot");
                     $(".dot").eq(this.currentSlide).addClass("active_dot");
-                    $(".slider-items").css({"left":- slideWidth * this.currentSlide});
+                    $(".slider-items").css({"transform":"translateX("+- slideWidth * mySlider.currentSlide+ "px" +")"});
                 };
             };
 
@@ -72,7 +72,8 @@ $(window).on({
                     console.log("bbb");
                     var index = $(e.target).index();
                     var slideWidth = $(".slide").width();
-                    $(".slider-items").css({"left":-slideWidth * index});
+                    $(".slider-items").css({"transform":"translateX("+-slideWidth * index + "px" +")"});
+
                     $(".dot.active_dot").removeClass("active_dot");
                     $(e.target).closest(".dot").addClass("active_dot");
                     this.currentSlide = index;
