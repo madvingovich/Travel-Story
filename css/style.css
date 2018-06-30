@@ -9,20 +9,12 @@ body {
     color: #273d46;
     overflow: hidden;
 }
-.night {
-    color: #5eaffd;
-    background: #3f3f3f;
-}
 h2 {
     margin-bottom: 4.375rem;
     font-size: 2em;
 }
 p {
     color: #52646b;
-}
-.night p {
-    color: #dcf9ff;
-    text-shadow: 0 0 1px black;
 }
 a.story_link {
     font-size: .775em;
@@ -37,16 +29,9 @@ a.story_link {
     box-shadow: 0 5px 35px #c1c1c1;
     transition: .5s;
 }
-.night a.story_link {
-    background: #445295;
-    box-shadow: 0 5px 35px #344f9e;
-}
 a.story_link:hover {
     box-shadow: 0 5px 35px 6px #c1c1c1;
     padding: 10px 15px 10px 25px;
-}
-.night a.story_link:hover {
-    box-shadow: 0 5px 35px 5px #344f9e;
 }
 a.story_link:hover .story_link_img {
     margin: 0 0 -3px 20px;
@@ -66,40 +51,6 @@ header {
     align-items: center;
     margin-bottom: -90px;
     -webkit-user-select: none;
-}
-.night_mode_block {
-    position: absolute;
-    right: 8%;
-    top: 12%;
-    display: flex;
-    opacity: 0;
-    align-items: center;
-}
-.night_mode_block p {
-    margin-right: 10px;
-    font-family: 'Poppins', sans-serif;
-    line-height: 20px;
-}
-.night_mode {
-    position: relative;
-    width: 50px;
-    height: 20px;
-    border: 2px solid #b09b9b;
-    cursor: pointer;
-    box-shadow: 0 0 5px #e9ebec;
-    border-radius: 9px;
-    background: rgba(0,0,0,.15);
-    z-index: 30;
-}
-.night_mode_toggle {
-    position: absolute;
-    width: 18px;
-    height: 100%;
-    background: #65dd68;
-    border-radius: 8px;
-    left: 0px;
-    border: 2px solid #78796d;
-    transition: .3s;
 }
 .active {
     left: 29px;
@@ -123,16 +74,9 @@ header {
     position: relative;
     top: -150px;
 }
-.night .logo {
-    background: #2b4677;
-    box-shadow: 0 0 50px #135eac;
-}
 .logo p {
     margin-top: -5px;
     color: #fff;
-}
-.night .logo p {
-    color: #c1c0c0;
 }
 .story {
     font-family: 'Poppins', sans-serif;
@@ -150,9 +94,7 @@ header {
     position: relative;
     bottom: -150px;
 }
-.night .story {
-    color: #3e5b68;
-}
+
 /*TRAVEL*/
 /*_____________________________*/
 .travel {
@@ -160,9 +102,7 @@ header {
     background: url("../img/day_bg.png") no-repeat;
     overflow: hidden;
 }
-.night .travel {
-    background: url("../img/night_bg.png") no-repeat;
-}
+
 .main_first_story {
     display: flex;
     padding: 90px 0 40px 10.96%;
@@ -188,9 +128,6 @@ header {
     letter-spacing: 1px;
     color: #7d8b90;
 }
-.night .travel_caption {
-    color: #a0eaff;
-}
 .paragraph1 {
     margin-bottom: 3.75em;
 }
@@ -206,13 +143,6 @@ header {
     border:10px solid #fff;
     box-shadow: 0 0 50px #757575;
     overflow: hidden;
-}
-.story_img:hover{
-    /*transform: scale(1.05) rotate(4deg);*/
-}
-.night .story_img {
-    border:10px solid #6c91b4;
-    box-shadow: 0 0 50px #135eac;
 }
 .story_img img {
     display: block;
@@ -243,10 +173,6 @@ header {
     position: relative;
     margin-bottom: 100px;
     text-align: center;
-}
-
-.night .main_second_story {
-    background: url("../img/night_bg.png") no-repeat;
 }
 .main_second_story_header {
     text-align: center;
@@ -291,7 +217,6 @@ header {
     overflow: hidden;
     -webkit-user-select: none;
     opacity: 0;
-    /*transition: 1s;*/
 }
 .container {
     width: 80%;
@@ -359,23 +284,6 @@ header {
 .dot:not(:first-child) {
     margin-left: 5px;
 }
-
-@media (max-width: 750px) {
-    .next, .prev {
-        font-size: .8em;
-    }
-    .dot {
-        height: 9.6px;
-        width: 9.6px;
-    }
-}
-@media (max-width: 550px) {
-    .next, .prev {
-        font-size: .6em;
-        width: 10%;
-    }
-}
-
      /* GALLERY */
 
 .gallery_block {
@@ -387,9 +295,6 @@ header {
     transition: 1s;
     transform: scale(0);
 }
-.night .gallery_block {
-    box-shadow: 0 0 50px #135eac;
-}
 .gallery_block img {
     display: block;
     width: 100%;
@@ -400,9 +305,6 @@ header {
     border:5px solid #fff;
     overflow: hidden;
     /*background: #000;*/
-}
-.night .gallery_head_img {
-    border:5px solid #6c91b4;
 }
 .gallery_head_img img {
     transition: .3s;
@@ -433,9 +335,6 @@ header {
     position: relative;
     cursor: pointer;
 }
-.night .gallery_item {
-    border:2px solid #6c91b4;
-}
 .gallery_item:hover {
     transform: scale(1.2);
     filter:none;
@@ -450,9 +349,6 @@ header {
     margin-top: -5em;
     background: url("../img/day_bg.png") no-repeat;
     overflow: hidden;
-}
-.night .quote {
-    background: url("../img/night_bg.png") no-repeat;
 }
 .quote_main {
     width: 70%;
@@ -500,17 +396,10 @@ header {
     opacity: 0;
     right: -700px;
 }
-.night .quote_content {
-    background: #3f3f3f;
-    box-shadow: 0 0 50px #135eac;
-}
 .qoute_content .travel_caption {
     color: #52646b;
     margin-bottom: 0px;
     margin-left: 10px;
-}
-.night .qoute_content .travel_caption {
-    color: #a0eaff;
 }
 .qoute_content .quote_date {
     color: #9c9d9d;
@@ -537,10 +426,6 @@ footer {
 }
 footer {
     background: url("../img/footer_bg.jpg") no-repeat;
-    background-size: cover;
-}
-.night footer {
-    background: url("../img/footer_night_bg.jpg") no-repeat;
     background-size: cover;
 }
 .subscribe_block {
@@ -596,7 +481,7 @@ footer {
     background: rgb(119, 184, 255);
     z-index: 100;
     /*display: none;*/
-    transition: .8s linear;
+    /*transition: .8s linear;*/
 }
 
 /* VIDEO ____________________ */
@@ -1023,9 +908,6 @@ video {
     .story_img {
         border: 5px solid #fff;
     }
-    .night .story_img {
-        border: 5px solid #6c91b4;
-    }
     .main_second_story {
         margin-top: 2em;
     }
@@ -1042,6 +924,13 @@ video {
     }
     .main_second_story .story_img {
         margin-bottom: 3em;
+    }
+    .next, .prev {
+        font-size: .8em;
+    }
+    .dot {
+        height: 9.6px;
+        width: 9.6px;
     }
 }
 @media (max-width: 720px) {
@@ -1100,12 +989,6 @@ video {
 }
 
 @media (max-width: 600px) {
-    .night_mode {
-        height: 10px;
-    }
-    .night_mode_block {
-        right: 3%;
-    }
     .quote_content {
         width: 90%;
     }
@@ -1119,9 +1002,6 @@ video {
     .form_text_inputs input {
         padding: 5px 20px;
     }
-    .night_mode_block p {
-        font-size: .8em;
-    }
     .logo {
         padding: 10px 15px;
     }
@@ -1134,6 +1014,10 @@ video {
     }
     .quote_main {
         width: 90%;
+    }
+    .next, .prev {
+        font-size: .6em;
+        width: 10%;
     }
 }
 @media (max-width: 500px) {
@@ -1181,9 +1065,6 @@ video {
 }
 
 @media (max-width: 400px) {
-    .night_mode_block p {
-        margin-right: 4px;
-    }
     .story1_left h2 {
         margin-bottom: 3.5em;
         text-align: right;
@@ -1197,9 +1078,6 @@ video {
     }
     .paragraph3, .paragraph4 {
         line-height: 1.5rem;
-    }
-    .night_mode_block p {
-        font-size: .6em;
     }
     .story1_left {
         width: 57%;

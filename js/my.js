@@ -2,32 +2,19 @@ $(window).on({
     load:function () {
 
         function showItems(e) {
-            this.check = 1;
-            this.nightModeToggle = function (e) {
-                if (e.target.closest(".night_mode")) {
-                    $(".night_mode_toggle").toggleClass("active");
-                    $(".night_mode").toggleClass("active_mode_box");
-                    $("body").toggleClass("night");
-                    if(this.check == 1) {
-                        $(".night_mode_block p")[0].innerHTML = "Night Mode : ON ";
-                        $("video").attr("poster", "img/video_night_poster.jpg");
-                        this.check = 2;
-                    } else {
-                        $(".night_mode_block p")[0].innerHTML = "Night Mode : OFF";
-                        $("video").attr("poster", "img/video_poster.jpg");
-                        this.check = 1;
-                    }
-                };
-            };
 
             this.removeOnloadWindow = function () {
-                $(".onload_window").css({
-                    "left":"100%",
-                    "top":"-100%",
-                    "bottom":"100%",
-                    "right":"-100%",
-                    "transform":"skew(-74deg) scale(0)"
-                });
+                $(".onload_window").animate({
+                    top:49.8 + "%",
+                    bottom:49.8 + "%"
+                },400);
+                $(".circles").animate({opacity:0});
+                setTimeout(function () {
+                    $(".onload_window").animate({
+                        left:49.8 + "%",
+                        right:49.8 + "%"
+                    },400);
+                },400);
                 $("body").css({"overflow":"auto"});
             };
 
