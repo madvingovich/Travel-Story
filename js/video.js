@@ -3,7 +3,6 @@ $(document).ready(function () {
     function myPlayer(element) {
         this.video = element.find("video")[0];
         this.videoEvent = element.find("video");
-        this.playPauseBtn = element.find(".play-pause");
         this.currentTimeBlock = element.find(".current_time");
         this.remainingTimeBlock = element.find(".remaining_time");
         this.controls = element.find(".video_controls");
@@ -14,7 +13,6 @@ $(document).ready(function () {
         this.videoStartBtn = element.find(".video_start");
         this.timeLength = function () {return element.find(".timelines").width();};
         this.timeLeftMargin = function () {return element.find(".timelines").offset().left;};
-        this.videoDuration = parseInt(this.video.duration) + 1;
         this.check = {timeline:false, move:false, modalOpened:false, mouseTimer:0, sound: 1,playBtn:1, full:1};
         this.modalTop = 0;
         this.modalLeft = 0;
@@ -23,7 +21,6 @@ $(document).ready(function () {
         this.currentVol = 0;
 
         this.videoStartBtnHover = function () {
-
             $(".video_start_icon").stop().animate({
                 bottom:15 + "px",
                 opacity:0
@@ -35,7 +32,6 @@ $(document).ready(function () {
         };
 
         this.videoStartBtnUnhover = function () {
-
             $(".video_start p").stop().animate({
                 opacity:0,
                 top:35 + "px"
@@ -44,7 +40,6 @@ $(document).ready(function () {
                 bottom:-35 + "px",
                 opacity:1
             },200);
-
         };
 
         this.showVideoModal = function (e) {
@@ -57,12 +52,11 @@ $(document).ready(function () {
                 $(".video_start").css({"transform":"translate(-50%,-50%) scale(0)"});
                 $(".video_modal").css({"left":this.modalLeft + "%","right":this.modalRight + "%","top":this.modalTop + "%", "bottom":this.modalBot + "%"});
                 $(".video_modal").css({"z-index":"100"});
-                // $(".video_modal").animate({opacity:1},200);
-                    $(".video_modal").animate({
-                        left:0,
-                        right:0,
-                        opacity:1
-                    },300);
+                $(".video_modal").animate({
+                    left:0,
+                    right:0,
+                    opacity:1
+                },300);
                 setTimeout(function () {
                     $(".video_modal").animate({
                         top:0,
@@ -109,13 +103,13 @@ $(document).ready(function () {
         };
 
         this.playPause = function (e) {
-                if(e.target.closest("video") || e.target.closest(".play-pause")) {
-                    if(this.video.paused) {
-                        this.video.play();
-                    } else {
-                        this.video.pause();
-                    }
+            if(e.target.closest("video") || e.target.closest(".play-pause")) {
+                if(this.video.paused) {
+                    this.video.play();
+                } else {
+                    this.video.pause();
                 }
+            }
         };
 
         this.spacePlayPause = function (e) {
@@ -144,7 +138,7 @@ $(document).ready(function () {
                 $("#pp_block1").css({"transform":"translateX(50%) scale(1)"});
             },100);
             this.check.playBtn = 1;
-        }
+        };
 
         this.innerTime = function () {
             var currentTime = parseInt(this.video.currentTime);
@@ -194,7 +188,7 @@ $(document).ready(function () {
         this.hideControls = function (e) {
             if(!e.target.closest(".video_controls") && !this.video.paused) {
                 this.controls.css({"opacity":"0"});
-                $(".close_modal").css({"opacity":"0"})
+                $(".close_modal").css({"opacity":"0"});
                 $("body").css({"cursor":"none"});
             }
         };
@@ -202,7 +196,7 @@ $(document).ready(function () {
         this.showControls = function (e) {
             if($(".video_modal").length) {
                 this.controls.css({"opacity":"1"});
-                $(".close_modal").css({"opacity":".3"})
+                $(".close_modal").css({"opacity":".3"});
                 $("body").css({"cursor":"default"});
             }
         };
@@ -237,7 +231,7 @@ $(document).ready(function () {
             for (volIndex; volIndex <= videoPlayer.vol.length; volIndex++) {
                 $(videoPlayer.vol[volIndex]).css({"background":"#505050"});
             }
-        }
+        };
 
         this.volumeRegulate = function (e) {
             if(e.target.closest(".vol")) {
@@ -293,9 +287,6 @@ $(document).ready(function () {
                     videoPlayer.video.currentTime = videoPlayer.video.duration / 100 * topTimelinePercent;
                     videoPlayer.video.play();
                 },270);
-                setTimeout(function () {
-
-                },400);
             }
         };
 
@@ -348,7 +339,7 @@ $(document).ready(function () {
                     }
                 }
             }
-        }
+        };
     };
 
     var videoPlayer = new myPlayer($(".video_container"));
@@ -397,11 +388,11 @@ $(document).ready(function () {
         videoPlayer.vulumeUnhover();
     });
 
-    $(".video_start").hover(function () {
+    videoPlayer.videoStartBtn.hover(function () {
         videoPlayer.videoStartBtnHover();
     },function () {
         videoPlayer.videoStartBtnUnhover();
-    })
+    });
 
 
 });

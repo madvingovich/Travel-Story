@@ -547,10 +547,10 @@ footer {
     opacity: .6 !important;
 }
 .close_modal:hover #modal_x1{
-    transform: translate(-50%,-50%) rotate(225deg);
+    transform: translate(-50%,-50%) rotate(90deg);
 }
 .close_modal:hover #modal_x2{
-    transform: translate(-50%,-50%) rotate(-225deg);
+    transform: translate(-50%,-50%) rotate(-90deg);
 }
 .modal_x {
     display: block;
