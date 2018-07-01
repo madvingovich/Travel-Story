@@ -88,7 +88,7 @@ $(window).on({
                 if($(window).width() < 1100) {
                     setTimeout(function () {
                         showItems.opacityShow($("#slider"));
-                    },500)
+                    },600)
                 }
             }
         };
