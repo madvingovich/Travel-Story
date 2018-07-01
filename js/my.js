@@ -49,7 +49,7 @@ $(window).on({
             };
             this.opacityShow = function (elem) {
                 if($(document).scrollTop() + $(window).height() > $(elem).offset().top + this.screenPercent) {
-                    $(elem).animate({opacity: 1}, 1500, "linear");
+                    $(elem).css({"opacity": "1"});
                 }
             };
             this.applyShowAnimations = function () {

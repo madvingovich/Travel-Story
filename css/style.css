@@ -216,6 +216,7 @@ header {
     display: flex;
     overflow: hidden;
     -webkit-user-select: none;
+    transition: 1.3s ease-out;
     opacity: 0;
 }
 .container {
@@ -292,6 +293,7 @@ header {
     box-shadow: 0 0 50px #757575;
     -webkit-user-select: none;
     position: relative;
+    transition: 1.5s ease-out;
     opacity: 0;
 }
 .gallery_block img {
@@ -392,6 +394,7 @@ header {
     top: -50px;
     background: #ffffff;
     box-shadow: 0 0 50px #c9c9c9;
+    transition: 1s;
     opacity: 0;
 }
 .qoute_content .travel_caption {
@@ -489,6 +492,7 @@ footer {
 #video {
     position: relative;
     -webkit-user-select: none;
+    transition: 2s ease-out;
     opacity: 0;
     font-family: serif;
     font-style: italic;
