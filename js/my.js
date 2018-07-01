@@ -86,7 +86,9 @@ $(window).on({
             };
             this.mobileSliderShow = function () {
                 if($(window).width() < 1100) {
-                    this.opacityShow($("#slider"));
+                    setTimeout(function () {
+                        showItems.opacityShow($("#slider"));
+                    },500)
                 }
             }
         };
