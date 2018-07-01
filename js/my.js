@@ -31,19 +31,20 @@ $(window).on({
                 },600);
             };
             this.screenPercent = $(window).height() / 100 * 15;
+
             this.verticalShowItem = function (elem) {
-                if($(document).scrollTop() + $(window).height()  > $(elem).offset().top) {
+                if($(document).scrollTop() + $(window).height() + this.screenPercent > $(elem).offset().top) {
+                    $(elem).css({"opacity":"1", "transform":"translate(0,0)"});
+                }
+            };
+            this.horizontalShowItem = function (elem) {
+                if($(document).scrollTop() + $(window).height() > $(elem).offset().top + this.screenPercent) {
                     $(elem).css({"opacity":"1", "transform":"translate(0,0)"});
                 }
             };
             this.scaleShow = function (elem) {
                 if($(document).scrollTop() + $(window).height() + this.screenPercent > $(elem).offset().top) {
                     $(elem).css({"transform":"scale(1)"});
-                }
-            };
-            this.horizontalShowIten = function (elem) {
-                if($(document).scrollTop() + $(window).height() > $(elem).offset().top + this.screenPercent) {
-                    $(elem).css({"opacity":"1", "transform":"translate(0,0)"});
                 }
             };
             this.opacityShow = function (elem) {
@@ -54,13 +55,13 @@ $(window).on({
             this.applyShowAnimations = function () {
                 this.verticalShowItem($(".main_second_story_caption"));
                 this.scaleShow($(".main_second_story .story_img"));
-                this.horizontalShowIten($(".paragraph3"));
-                this.horizontalShowIten($(".paragraph4"));
+                this.horizontalShowItem($(".paragraph3"));
+                this.horizontalShowItem($(".paragraph4"));
                 this.opacityShow($("#slider"));
                 this.opacityShow($(".gallery_block"));
                 this.opacityShow($("#video"));
-                this.horizontalShowIten($(".quote_img"));
-                this.horizontalShowIten($(".quote_info"));
+                this.horizontalShowItem($(".quote_img"));
+                this.horizontalShowItem($(".quote_info"));
                 this.opacityShow($(".quote_content"));
                 this.verticalShowItem($(".subscribe_block"));
             };
