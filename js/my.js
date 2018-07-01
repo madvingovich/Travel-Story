@@ -65,7 +65,6 @@ $(window).on({
                 this.opacityShow($(".quote_content"));
                 this.verticalShowItem($(".subscribe_block"));
             };
-
             this.galleryItems = function (e) {
                 if(e.target.closest(".gallery_item")) {
                     var src = $(e.target).attr("src");
@@ -84,13 +83,19 @@ $(window).on({
                         });
                     }
                 }
+            };
+            this.mobileSliderShow = function () {
+                if($(window).width() < 1100) {
+                    this.opacityShow($("#slider"));
+                }
             }
         };
-
 
         var showItems = new showItems();
 
         showItems.removeOnloadWindow();
+
+        showItems.mobileSliderShow();
 
         $(document).on({
             click:function (e) {
