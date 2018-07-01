@@ -186,8 +186,8 @@ header {
 .main_second_story .story_img {
     position: relative;
     margin-bottom: 6.25em;
-    transition: 1s;
-    transform: scale(0);
+    transition: .7s ease-out;
+    transform: translate(0,200px);
 }
 .mail_second_story_text {
     padding: 0 2rem;

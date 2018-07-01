@@ -48,13 +48,13 @@ $(window).on({
                 }
             };
             this.opacityShow = function (elem) {
-                if($(document).scrollTop() + $(window).height() > $(elem).offset().top ) {
+                if($(document).scrollTop() + $(window).height() + this.screenPercent > $(elem).offset().top ) {
                     $(elem).css({"opacity": "1"});
                 }
             };
             this.applyShowAnimations = function () {
                 this.verticalShowItem($(".main_second_story_caption"));
-                this.scaleShow($(".main_second_story .story_img"));
+                this.verticalShowItem($(".main_second_story .story_img"));
                 this.horizontalShowItem($(".paragraph3"));
                 this.horizontalShowItem($(".paragraph4"));
                 this.opacityShow($("#slider"));
