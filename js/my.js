@@ -48,7 +48,7 @@ $(window).on({
                 }
             };
             this.opacityShow = function (elem) {
-                if($(document).scrollTop() + $(window).height() > $(elem).offset().top + this.screenPercent) {
+                if($(document).scrollTop() + $(window).height() > $(elem).offset().top ) {
                     $(elem).css({"opacity": "1"});
                 }
             };

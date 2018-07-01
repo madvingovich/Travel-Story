@@ -140,7 +140,7 @@ header {
 }
 .story_img {
     position: absolute;
-    border:10px solid #fff;
+    border:7px solid #fff;
     box-shadow: 0 0 50px #757575;
     overflow: hidden;
 }
@@ -855,9 +855,6 @@ video {
 @media (max-width: 1100px) {
     body {
         font-size: 14px;
-    }
-    .story_img {
-        border: 5px solid #fff;
     }
 }
 @media (max-width: 1000px) {
