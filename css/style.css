@@ -362,7 +362,7 @@ header {
 }
 .quote_img {
     position: relative;
-    transition: .7s ease-out;
+    transition: 1s ease-out;
     transform: translate(-700px,0);
     opacity: 0;
     width: 40%;
@@ -376,7 +376,7 @@ header {
 .quote_info {
     width: 55%;
     position: relative;
-    transition: .7s ease-out;
+    transition: 1s ease-out;
     transform: translate(700px,0);
     opacity: 0;
 }
