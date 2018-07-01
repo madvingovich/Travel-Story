@@ -6,12 +6,14 @@ $(window).on({
                     top:49.8 + "%",
                     bottom:49.8 + "%"
                 },400);
+                $(".onload_window").css({"border":"2px solid #000"});
                 $(".circles").animate({opacity:0});
                 setTimeout(function () {
                     $(".onload_window").animate({
                         left:49.8 + "%",
                         right:49.8 + "%"
                     },400);
+                    // $(".onload_window").css({"background":"#000"});
                 },400);
                 $("body").css({"overflow":"auto"});
             };
