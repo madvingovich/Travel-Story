@@ -856,6 +856,9 @@ video {
     body {
         font-size: 14px;
     }
+    .story_img {
+        border: 5px solid #fff;
+    }
 }
 @media (max-width: 1000px) {
     body {
@@ -864,9 +867,6 @@ video {
     .quote_content {
         padding: 2.125em 3em;
         font-size: .9em;
-    }
-    .story_img {
-        border: 5px solid #fff;
     }
     .subscribe_block {
         width: 65%;
