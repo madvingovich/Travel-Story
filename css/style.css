@@ -200,7 +200,7 @@ header {
     font-size: 1.2em;
     position: relative;
     opacity: 0;
-    transition: .7s linear;
+    transition: 1s ease-out;
 }
 .paragraph3 {
     transform: translate(-700px,0);
