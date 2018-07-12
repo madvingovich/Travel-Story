@@ -6,7 +6,7 @@ $(window).on({
             this.slideLength = $(".slide").length;
             this.timer = 0;
 
-            this.mostLittle = function (e) {
+            this.mostLittle = function (e) {      // Ищу самую маленькую по высоте картинку и делаю такую же высоту всем остальным
                 var images = $(e.find("img"));
                 var height = $(images[0]).height();
                 for(var i = 0; i < images.length - 1; i++) {

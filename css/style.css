@@ -21,22 +21,27 @@ a.story_link {
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 10px 25px 10px 15px;
     border-radius: 20px;
     background: linear-gradient(to bottom, rgba(74, 64, 202, 0.8), rgba(44, 228, 255, 0.8));
     font-family: 'Poppins', sans-serif;
     letter-spacing: 3px;
-    box-shadow: 0 0 1px #0020ff inset, 0 0 4px #0032ff;
+    box-shadow: 0 0 1px #0020ff inset, 0 0 10px #0032ff;
     transition: .2s;
     text-shadow: 0 0 3px #1f3dc8;
+    position: absolute;
 }
 a.story_link:hover {
     box-shadow: 0 0 3px #0020ff inset, 0 0 2px #0032ff;
+    padding: 10px 15px 10px 15px;
+}
+a.story_link:hover .story_link_icon {
+    margin-left: 20px;
 }
 
 .story_link i {
-    transition: .3s;
-    /*font-size: 1.5em;*/
+    transition: .2s;
+    margin-left: 10px;
 }
 
 /*HEADER*/
@@ -72,7 +77,7 @@ header {
     z-index: 2;
     position: relative;
     transition: .5s;
-    transform: translate(0,-150px);
+    transform: translate(0,-200px);
 }
 .logo p {
     margin-top: -5px;
@@ -106,7 +111,7 @@ header {
 .main_first_story {
     display: flex;
     padding: 90px 0 40px 10.96%;
-    /*overflow: hidden;*/
+    margin-bottom: 150px;
 }
 .story1_left {
     width: 35%;
@@ -193,7 +198,9 @@ header {
     padding: 0 2rem;
     line-height: 2rem;
 }
-
+.main_second_story .story_link {
+    transform: translateX(-50%);
+}
 .paragraph3, .paragraph4 {
     text-align: center;
     margin-bottom: 3em;
@@ -418,7 +425,7 @@ header {
     bottom: 0;
     top: auto !important;
     background: linear-gradient(to bottom, rgba(62, 153, 202, 0.8), rgba(127, 230, 255, 0.8));
-    box-shadow: 0 0 1px #6686ff inset, 0 0 4px #6686ff;
+    box-shadow: 0 0 1px #6686ff inset, 0 0 10px #6686ff;
 }
 footer {
     padding: 150px 0;
@@ -446,6 +453,7 @@ footer {
     box-shadow: none;
     background: #80b7b3;
     text-shadow: none;
+    position: relative;
 }
 .subscribe_block .story_link:hover {
     box-shadow: 0 0 15px black;
@@ -759,6 +767,7 @@ video {
     justify-content: center;
     align-items: center;
     width: 65%;
+    height: 50px;
 }
 .vol {
     display: block;
@@ -772,16 +781,6 @@ video {
 .vol:hover {
     height: 25px !important;
 }
-@media (max-width: 720px) {
-
-}
-
-
-
-
-
-
-
 .circle {
     position: absolute;
     left: 50%;

@@ -10,7 +10,6 @@ $(document).ready(function () {
         this.timelines = element.find(".timelines");
         this.topTimeline = element.find(".top_timeline");
         this.bottomTimeline = element.find(".bottom_timeline");
-        this.videoStartBtn = element.find(".video_start");
         this.timeLength = function () {return element.find(".timelines").width();};
         this.timeLeftMargin = function () {return element.find(".timelines").offset().left;};
         this.check = {timeline:false, move:false, modalOpened:false, mouseTimer:0, sound: 1,playBtn:1, full:1};
@@ -98,7 +97,6 @@ $(document).ready(function () {
                     },200);
                     $(".video_start").css({"transform":"translate(-50%,-50%) scale(1)"});
                 },800);
-                console.log(videoPlayer.modalTop + videoPlayer.modalBot)
             }
         };
 
@@ -140,7 +138,7 @@ $(document).ready(function () {
             this.check.playBtn = 1;
         };
 
-        this.innerTime = function () {
+        this.innerTime = function () {   // ф-ция записи текущего и оставшегося времени в соответствующие блоки
             var currentTime = parseInt(this.video.currentTime);
             var remainingTime = parseInt(this.video.duration - currentTime);
 
@@ -201,8 +199,8 @@ $(document).ready(function () {
             }
         };
 
-        this.controlsVisibility = function (e) {
-            if($(".video_modal").length) {
+        this.controlsVisibility = function (e) {    // при бездействии прятать курсор и video controls
+            if($(".video_modal").height() > 100) {
                 clearTimeout(this.check.mouseTimer);
                 this.check.mouseTimer = setTimeout(function () {
                     videoPlayer.hideControls(e);
@@ -237,7 +235,6 @@ $(document).ready(function () {
             if(e.target.closest(".vol")) {
                 var index = $(e.target).index();
                 var index2 = $(e.target).index();
-                var timer = 100;
                 this.video.volume = index / 20;
                 for (index; index >= 0; index--) {
                     $(videoPlayer.vol[index]).css({"background":"#fff"});
