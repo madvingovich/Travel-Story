@@ -2,7 +2,9 @@ $(window).on({
     load:function () {
 
         $('.my-slider').mySlider({
-            autoplay:false
+            autoplay: 5000,
+            dots: true,
+            arrows: true
         });
 
         function showItems(e) {

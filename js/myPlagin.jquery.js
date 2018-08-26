@@ -2,8 +2,7 @@ $(function () {
     $.fn.mySlider = function (settings) {
         let def = {
             dots: true,
-            autoplay: true,
-            timer: 4000,
+            autoplay: 4000,
             arrows: true
         };
 
@@ -57,12 +56,14 @@ $(function () {
                     itemsBlock.css({'transform' : 'translateX('+ -newX +'px)'});
                     if(def.dots) {
                         changeActiveDot('+');
+                        activeDotIndex = $('.dot.active').index();
                     }
                 } else if(slide === 'prev') {
                     newX = x - sliderItems.width() < 0 ? slidesWidth - sliderItems.width() : x - sliderItems.width();
                     itemsBlock.css({'transform' : 'translateX('+ -newX +'px)'});
                     if(def.dots) {
                         changeActiveDot('-');
+                        activeDotIndex = $('.dot.active').index();
                     }
                 }
             }
@@ -83,7 +84,6 @@ $(function () {
             dot.on('click', function () {
                 $('.dot.active').removeClass('active');
                 $(this).addClass('active');
-                // let x = $(this).index();
                 activeDotIndex = $(this).index();
                 changeSlide(activeDotIndex);
             });
@@ -103,7 +103,7 @@ $(function () {
         if(def.autoplay) {
             timer = setInterval(function () {
                 changeSlide('next');
-            },def.timer);
+            },def.autoplay);
         }
 
         $(window).on('resize', function () {
