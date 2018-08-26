@@ -8,13 +8,13 @@ $(function () {
 
         $.extend(def, settings);
 
-        let slider = $('.my-slider');
-        let itemsBlock = $('.slider-items');
-        let sliderItems = $('.item');
-        let activeDotIndex = 0;
+        let slider = $(this);
+        let itemsBlock = slider.find('.slider-items');
+        let sliderItems = slider.find('.item');
         let imgWidth;
         let isRun = false;
         let timer;
+        let activeDotIndex = 0;
 
         function setImagesWidth () {
             imgWidth = slider.width();
@@ -22,8 +22,8 @@ $(function () {
         }
 
         function changeActiveDot (val) {      // val = + or - depending on were we wont to move the dot
-            let activeDot = $('.dot.active');
-            let dots = $('.dot');
+            let activeDot = slider.find('.dot.active');
+            let dots = slider.find('.dot');
             let index = activeDot.index();
             activeDot.removeClass('active');
             if(val === '+') {
