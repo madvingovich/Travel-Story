@@ -16,6 +16,8 @@ $(function () {
         let timer;
         let activeDotIndex = 0;
 
+
+
         function setImagesWidth () {
             imgWidth = slider.width();
             sliderItems.width(imgWidth);
@@ -82,6 +84,7 @@ $(function () {
             let dot = $('.dot');
             dot.first().addClass('active');
             dot.on('click', function () {
+                if(isRun) return;
                 $('.dot.active').removeClass('active');
                 $(this).addClass('active');
                 activeDotIndex = $(this).index();
